@@ -2,6 +2,7 @@ package com.geekster.UserManagementSystem.controller;
 
 import com.geekster.UserManagementSystem.model.User;
 import com.geekster.UserManagementSystem.service.UserService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.converter.json.GsonBuilderUtils;
 import org.springframework.web.bind.annotation.*;
@@ -14,7 +15,7 @@ public class UserManagementController {
     UserService userService;
 
     @PostMapping(value = "/addUser")
-    public String addUser(@RequestBody User user) {
+    public String addUser(@Valid @RequestBody User user) {
         return userService.addNewUser(user);
     }
 
