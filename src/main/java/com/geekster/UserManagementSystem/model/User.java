@@ -26,5 +26,8 @@ public class User {
     private String phoneNumber;
 
     @DateTimeFormat
-    private String dateTime;
+    private LocalDate date;
+
+    @DateTimeFormat
+    private LocalTime time;
 }
